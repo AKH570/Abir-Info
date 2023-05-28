@@ -1,0 +1,47 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="section" id="portfolio"><!--portfolio-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="h4 text-center mb-4 title">Portfolio</div>
+          <div class="nav-align-center">
+            <ul class="nav nav-pills nav-pills-primary" role="tablist">
+              <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Photography" role="tablist"><i class="fa fa-camera" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content gallery mt-5">
+        <div class="tab-pane active" id="web-development">
+          <div class="ml-auto mr-auto">
+            <div class="row">
+                {% for p in portfo %}
+              <div class="col-md-6">
+                <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#web-development">
+                    <figure class="cc-effect">
+                      <!--<video class="w-100" autoplay loop muted>
+                        <source src="{{p.my_portfolio}}" type="video/mp4" />
+                      </video> -->
+                      <img src="{{p.portimg.url}}" alt="Image"/>
+                      <figcaption>
+                        <div class="h4">Recent Project</div>
+                        <p>{{p.name}}</p>
+                      </figcaption>
+                    </figure></a></div> 
+              </div>
+              {% endfor %}
+              <div class="col-md-6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!--endportfolio-->
+
+{% endblock content %}

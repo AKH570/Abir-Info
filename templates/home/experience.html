@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+<div class="section" id="experience"> <!--experience-->
+    <div class="container cc-experience">
+      <div class="h4 text-center mb-4 title">Work Experience</div>
+      {% for e in exp %}
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body cc-experience-header">
+              <p>{{e.from_date}} - {{e.remarks}}</p><p class="mt-0">({{e.totalyr}} years)</p>
+              <div class="h6">{{e.field_name}}</div>
+              <div><p class="h5">{{e.company_name}}</p></div>
+            </div>
+          </div>
+          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body">
+              <div class="h5">{{e.designation}}</div>
+              <p>{{ e.responsibility}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+<div class="section"><!--education-->
+    <div class="container cc-education">
+      <div class="h4 text-center mb-4 title">Education</div>
+      {% for e in edu %}
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body cc-education-header">
+              <p>{{e.start_dt}} - {{e.end_dt}}</p>
+              <div class="h5">{{e.degee_name}}</div>
+            </div>
+          </div>
+          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body">
+              <div class="h5 mb-0">{{e.subject}}</div>
+              <div class="row mt-3">
+                <div class="col-auto">
+                  <a href="#"><img src="{{e.ins_imgs}}" alt="Image"/></a>
+                </div>
+                    <div class="col-9"><h5 class="text-left">{{e.school_name}}</h5>
+                    </div>
+                    <div class="col">
+                      <div class="inner"><a href="#"><img src="{{e.cert_img}}" class="rounded float-left" alt="Image"/></a>
+                      </div>
+                    </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
