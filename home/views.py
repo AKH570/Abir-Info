@@ -49,11 +49,12 @@ def myskills(request):
     return render(request,'home/skill.html',{'sk':sk,'info':info})
 '''
    #this is for my ref.... 
+'''
 def myreference(request):
     info=home.objects.all()
     ref=References.objects.all()
     return render(request,'home/reference.html',{'ref':ref,'info':info})
-
+'''
 #this file is for myportfolio
 def myportfolio(request):
     info=home.objects.all()
