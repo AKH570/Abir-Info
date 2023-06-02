@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import home,experience,Educations,skills,References,myPortfolio,ExtraAct,Contact
+from . models import home,experience,Educations,References,myPortfolio,ExtraAct,Contact
 from datetime import date
 from django.contrib import messages
 
